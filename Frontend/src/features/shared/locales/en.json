@@ -1,0 +1,72 @@
+{
+  "app": { "name": "Inventory System" },
+  "nav": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "sales": "Sales",
+    "salesReturns": "Sales Returns",
+    "purchases": "Purchases",
+    "purchaseReturns": "Purchase Returns",
+    "stock": "Stock",
+    "users": "Users"
+  },
+  "header": {
+    "toggleSidebar": "Toggle sidebar",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "language": "Language",
+    "logout": "Log out"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "actions": "Actions",
+    "loading": "Loading...",
+    "retry": "Try again",
+    "search": "Search...",
+    "required": "This field is required",
+    "min": "Must be at least {{min}}"
+  },
+  "master": {
+    "list": "List",
+    "new": "New",
+    "edit": "Edit",
+    "empty": "No records yet.",
+    "noResults": "Nothing matches your search.",
+    "created": "Record created",
+    "updated": "Record updated",
+    "deleted": "Record deleted",
+    "deleteTitle": "Delete record",
+    "deleteConfirm": "Are you sure you want to delete \"{{name}}\"? This cannot be undone.",
+    "count": "{{count}} records"
+  },
+  "products": {
+    "title": "Products",
+    "code": "Code",
+    "name": "Name",
+    "category": "Category ID",
+    "unit": "Unit ID",
+    "purchasePrice": "Purchase price",
+    "salePrice": "Sale price",
+    "reorderLevel": "Reorder level",
+    "description": "Description"
+  },
+  "auth": {
+    "title": "Sign in",
+    "subtitle": "Welcome back. Please sign in to continue.",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Sign in",
+    "fakeNote": "Demo: any username and password works for now."
+  },
+  "placeholder": {
+    "title": "Coming soon",
+    "text": "This page is ready to be built. Add your feature in src/features and point its route to your page."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "back": "Back to dashboard"
+  }
+}
