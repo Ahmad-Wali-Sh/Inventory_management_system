@@ -20,6 +20,7 @@
   "common": {
     "save": "Save",
     "cancel": "Cancel",
+    "back": "Back",
     "delete": "Delete",
     "edit": "Edit",
     "actions": "Actions",
@@ -52,6 +53,28 @@
     "salePrice": "Sale price",
     "reorderLevel": "Reorder level",
     "description": "Description"
+  },
+  "purchaseReturns": {
+    "title": "Purchase Returns",
+    "new": "New purchase return",
+    "returnNo": "Return number",
+    "returnDate": "Return date",
+    "purchase": "Purchase invoice",
+    "freeReturn": "Free-standing return",
+    "supplier": "Supplier",
+    "warehouse": "Warehouse",
+    "createdBy": "Created by",
+    "reason": "Reason",
+    "items": "Items",
+    "product": "Product",
+    "quantity": "Quantity",
+    "unitPrice": "Unit cost",
+    "amount": "Amount",
+    "available": "Available",
+    "addItem": "Add item",
+    "removeItem": "Remove",
+    "details": "Details",
+    "saved": "Purchase return saved"
   },
   "auth": {
     "title": "Sign in",

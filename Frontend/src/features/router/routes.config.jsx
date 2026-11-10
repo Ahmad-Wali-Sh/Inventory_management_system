@@ -21,6 +21,7 @@
 // =====================================================================
 import LoginPage from '../auth/LoginPage';
 import ProductsPage from '../products/ProductsPage';
+import PurchaseReturnsPage from '../purchaseReturns/PurchaseReturnsPage';
 import PlaceholderPage from '../shared/components/PlaceholderPage';
 import NotFoundPage from './NotFoundPage';
 
@@ -52,6 +53,14 @@ export const routes = [
     sidebar: { icon: 'box' },
   },
   {
+    path: '/purchase-returns',
+    element: <PurchaseReturnsPage />,
+    titleKey: 'nav.purchaseReturns',
+    layout: true,
+    protected: true,
+    sidebar: { icon: 'undo' },
+  },
+  {
     path: '/sales',
     element: <PlaceholderPage titleKey="nav.sales" />, // TODO(students)
     titleKey: 'nav.sales',
@@ -74,14 +83,6 @@ export const routes = [
     layout: true,
     protected: true,
     sidebar: { icon: 'truck' },
-  },
-  {
-    path: '/purchase-returns',
-    element: <PlaceholderPage titleKey="nav.purchaseReturns" />, // TODO(students)
-    titleKey: 'nav.purchaseReturns',
-    layout: true,
-    protected: true,
-    sidebar: { icon: 'undo' },
   },
   {
     path: '/stock',
