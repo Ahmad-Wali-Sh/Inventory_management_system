@@ -5,6 +5,8 @@ const cors = require('cors');
 const pool = require('./config/db.config');
 const { notFound, errorHandler } = require('./middlewares/errorHandler');
 const productRoutes = require('./routes/product.routes');
+const purchaseReturnRoutes = require('./routes/purchaseReturn.routes');
+const saleReturnRoutes = require('./routes/saleReturn.routes');
 
 const app = express();
 
@@ -20,6 +22,8 @@ app.get('/api/health', async (req, res) => {
 
 // Routes
 app.use('/api/products', productRoutes);
+app.use('/api/purchase-returns', purchaseReturnRoutes);
+app.use('/api/sale-returns', saleReturnRoutes);
 
 // 404 and errors (keep these last)
 app.use(notFound);
