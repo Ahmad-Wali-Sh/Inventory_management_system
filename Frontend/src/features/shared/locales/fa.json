@@ -1,5 +1,7 @@
 {
-  "app": { "name": "سیستم انبارداری" },
+  "app": {
+    "name": "سیستم انبارداری"
+  },
   "nav": {
     "dashboard": "داشبورد",
     "products": "محصولات",
@@ -7,8 +9,9 @@
     "salesReturns": "برگشت از فروش",
     "purchases": "خرید",
     "purchaseReturns": "برگشت از خرید",
-    "stock": "موجودی",
-    "users": "کاربران"
+    "stock": "موجودی انبار",
+    "users": "کاربران",
+    "warehouses": "انبارها"
   },
   "header": {
     "toggleSidebar": "باز و بسته کردن منو",

@@ -1,5 +1,7 @@
 {
-  "app": { "name": "Inventory System" },
+  "app": {
+    "name": "Inventory System"
+  },
   "nav": {
     "dashboard": "Dashboard",
     "products": "Products",
@@ -7,8 +9,9 @@
     "salesReturns": "Sales Returns",
     "purchases": "Purchases",
     "purchaseReturns": "Purchase Returns",
-    "stock": "Stock",
-    "users": "Users"
+    "stock": "Stocks",
+    "users": "Users",
+    "warehouses": "Warehouses"
   },
   "header": {
     "toggleSidebar": "Toggle sidebar",

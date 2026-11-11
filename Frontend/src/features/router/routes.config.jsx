@@ -21,6 +21,8 @@
 // =====================================================================
 import LoginPage from '../auth/LoginPage';
 import ProductsPage from '../products/ProductsPage';
+import WarehousesPage from '../warehouses/WarehousesPage';
+import StockPage from '../stock/StockPage';
 import PurchaseReturnsPage from '../purchaseReturns/PurchaseReturnsPage';
 import SaleReturnsPage from '../saleReturns/SaleReturnsPage';
 import PlaceholderPage from '../shared/components/PlaceholderPage';
@@ -87,11 +89,19 @@ export const routes = [
   },
   {
     path: '/stock',
-    element: <PlaceholderPage titleKey="nav.stock" />, // TODO(students)
+    element: <StockPage />,
     titleKey: 'nav.stock',
     layout: true,
     protected: true,
     sidebar: { icon: 'layers' },
+  },
+  {
+    path: '/warehouses',
+    element: <WarehousesPage />,
+    titleKey: 'nav.warehouses',
+    layout: true,
+    protected: true,
+    sidebar: { icon: 'warehouse' },
   },
   {
     path: '/users',

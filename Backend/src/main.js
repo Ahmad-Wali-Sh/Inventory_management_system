@@ -7,6 +7,8 @@ const { notFound, errorHandler } = require('./middlewares/errorHandler');
 const productRoutes = require('./routes/product.routes');
 const purchaseReturnRoutes = require('./routes/purchaseReturn.routes');
 const saleReturnRoutes = require('./routes/saleReturn.routes');
+const warehouseRoutes = require('./routes/warehouse.routes');
+const stockRoutes = require('./routes/stock.routes');
 
 const app = express();
 
@@ -24,6 +26,8 @@ app.get('/api/health', async (req, res) => {
 app.use('/api/products', productRoutes);
 app.use('/api/purchase-returns', purchaseReturnRoutes);
 app.use('/api/sale-returns', saleReturnRoutes);
+app.use('/api/warehouses', warehouseRoutes);
+app.use('/api/stock', stockRoutes);
 
 // 404 and errors (keep these last)
 app.use(notFound);
