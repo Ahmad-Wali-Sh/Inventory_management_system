@@ -20,5 +20,6 @@ export function createCrudApi(endpoint) {
     create: (data) => axiosClient.post(endpoint, data).then((res) => res.data),
     update: (id, data) => axiosClient.put(`${endpoint}/${id}`, data).then((res) => res.data),
     remove: (id) => axiosClient.delete(`${endpoint}/${id}`).then((res) => res.data),
+    getOptions: () => axiosClient.get(`${endpoint}/options`).then((response) => response.data)
   };
 }
