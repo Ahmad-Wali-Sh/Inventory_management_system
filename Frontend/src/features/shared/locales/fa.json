@@ -20,6 +20,7 @@
   "common": {
     "save": "ذخیره",
     "cancel": "انصراف",
+    "back": "بازگشت",
     "delete": "حذف",
     "edit": "ویرایش",
     "actions": "عملیات",
@@ -52,6 +53,28 @@
     "salePrice": "قیمت فروش",
     "reorderLevel": "حد سفارش مجدد",
     "description": "توضیحات"
+  },
+  "purchaseReturns": {
+    "title": "برگشت از خرید",
+    "new": "ثبت برگشت از خرید",
+    "returnNo": "شماره برگشت",
+    "returnDate": "تاریخ برگشت",
+    "purchase": "فاکتور خرید",
+    "freeReturn": "برگشت بدون فاکتور",
+    "supplier": "تأمین‌کننده",
+    "warehouse": "انبار",
+    "createdBy": "ثبت‌کننده",
+    "reason": "دلیل",
+    "items": "اقلام",
+    "product": "محصول",
+    "quantity": "مقدار",
+    "unitPrice": "بهای واحد",
+    "amount": "مبلغ",
+    "available": "قابل برگشت",
+    "addItem": "افزودن قلم",
+    "removeItem": "حذف",
+    "details": "جزئیات",
+    "saved": "برگشت از خرید ثبت شد"
   },
   "auth": {
     "title": "ورود",
