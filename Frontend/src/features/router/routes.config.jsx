@@ -22,6 +22,7 @@
 import LoginPage from '../auth/LoginPage';
 import ProductsPage from '../products/ProductsPage';
 import PurchaseReturnsPage from '../purchaseReturns/PurchaseReturnsPage';
+import SaleReturnsPage from '../saleReturns/SaleReturnsPage';
 import PlaceholderPage from '../shared/components/PlaceholderPage';
 import NotFoundPage from './NotFoundPage';
 
@@ -70,7 +71,7 @@ export const routes = [
   },
   {
     path: '/sales-returns',
-    element: <PlaceholderPage titleKey="nav.salesReturns" />, // TODO(students)
+    element: <SaleReturnsPage />, // TODO(students)
     titleKey: 'nav.salesReturns',
     layout: true,
     protected: true,

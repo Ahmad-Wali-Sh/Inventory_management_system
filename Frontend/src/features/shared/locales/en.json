@@ -28,7 +28,8 @@
     "retry": "Try again",
     "search": "Search...",
     "required": "This field is required",
-    "min": "Must be at least {{min}}"
+    "min": "Must be at least {{min}}",
+    "max": "Must be no more than {{max}}"
   },
   "master": {
     "list": "List",
@@ -75,6 +76,29 @@
     "removeItem": "Remove",
     "details": "Details",
     "saved": "Purchase return saved"
+  },
+  "saleReturns": {
+    "title": "Sale Returns",
+    "new": "New sale return",
+    "returnNo": "Return number",
+    "returnDate": "Return date",
+    "sale": "Sale invoice",
+    "freeReturn": "Free-standing return",
+    "customer": "Customer",
+    "warehouse": "Warehouse",
+    "createdBy": "Created by",
+    "reason": "Reason",
+    "items": "Items",
+    "product": "Product",
+    "quantity": "Quantity",
+    "unitPrice": "Unit price",
+    "amount": "Amount",
+    "available": "Available",
+    "addItem": "Add item",
+    "removeItem": "Remove",
+    "details": "Details",
+    "saved": "Sale return saved",
+    "updated": "Sale return updated"
   },
   "auth": {
     "title": "Sign in",

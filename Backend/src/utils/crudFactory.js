@@ -18,6 +18,7 @@
 const express = require('express');
 const pool = require('../config/db.config');
 const AppError = require('./AppError');
+const { parseId: parseDocumentId } = require('./documentValidation');
 
 /**
  * @param {object}   options
@@ -27,6 +28,8 @@ const AppError = require('./AppError');
  * @param {string}   [options.idColumn='id']
  * @param {string}   [options.orderBy='id']        ORDER BY used by the list route
  * @param {boolean}  [options.hasUpdatedAt=true]   set updated_at = NOW() on update
+ * @param {object}   [options.handlers={}]         custom CRUD route handlers
+ * @param {object}   [options.methods]              enable or disable CRUD routes
  * @returns {import('express').Router}
  */
 function crudFactory({
@@ -36,38 +39,42 @@ function crudFactory({
   idColumn = 'id',
   orderBy = 'id',
   hasUpdatedAt = true,
+  handlers = {},
+  methods = {},
 }) {
   const router = express.Router();
+  const enabled = {
+    list: true,
+    get: true,
+    create: true,
+    update: true,
+    remove: true,
+    ...methods,
+  };
 
   // Keep only allowed columns from the request body, as [column, value] pairs.
   const pickColumns = (body = {}) =>
     columns.filter((col) => body[col] !== undefined).map((col) => [col, body[col]]);
 
   // Make sure :id is a positive whole number.
-  const parseId = (value) => {
-    const id = Number(value);
-    if (!Number.isInteger(id) || id <= 0) {
-      throw new AppError(400, 'Invalid id');
-    }
-    return id;
-  };
+  const parseId = (value) => parseDocumentId(value, 'Invalid id');
 
   // GET / -> list all rows
-  router.get('/', async (req, res) => {
+  if (enabled.list) router.get('/', handlers.list || (async (req, res) => {
     const { rows } = await pool.query(`SELECT * FROM ${table} ORDER BY ${orderBy}`);
     res.json(rows);
-  });
+  }));
 
   // GET /:id -> one row
-  router.get('/:id', async (req, res) => {
+  if (enabled.get) router.get('/:id', handlers.get || (async (req, res) => {
     const id = parseId(req.params.id);
     const { rows } = await pool.query(`SELECT * FROM ${table} WHERE ${idColumn} = $1`, [id]);
     if (rows.length === 0) throw new AppError(404, `${table} record not found`);
     res.json(rows[0]);
-  });
+  }));
 
   // POST / -> create a row
-  router.post('/', async (req, res) => {
+  if (enabled.create) router.post('/', handlers.create || (async (req, res) => {
     const body = req.body || {};
     const missing = required.filter(
       (col) => body[col] === undefined || body[col] === null || body[col] === ''
@@ -88,10 +95,10 @@ function crudFactory({
       values
     );
     res.status(201).json(rows[0]);
-  });
+  }));
 
   // PUT /:id -> update only the columns that were sent
-  router.put('/:id', async (req, res) => {
+  if (enabled.update) router.put('/:id', handlers.update || (async (req, res) => {
     const id = parseId(req.params.id);
     const pairs = pickColumns(req.body);
     if (pairs.length === 0) throw new AppError(400, 'No valid fields sent');
@@ -107,10 +114,10 @@ function crudFactory({
     );
     if (rows.length === 0) throw new AppError(404, `${table} record not found`);
     res.json(rows[0]);
-  });
+  }));
 
   // DELETE /:id -> delete a row, returns the deleted row
-  router.delete('/:id', async (req, res) => {
+  if (enabled.remove) router.delete('/:id', handlers.remove || (async (req, res) => {
     const id = parseId(req.params.id);
     const { rows } = await pool.query(
       `DELETE FROM ${table} WHERE ${idColumn} = $1 RETURNING *`,
@@ -118,7 +125,7 @@ function crudFactory({
     );
     if (rows.length === 0) throw new AppError(404, `${table} record not found`);
     res.json(rows[0]);
-  });
+  }));
 
   return router;
 }
