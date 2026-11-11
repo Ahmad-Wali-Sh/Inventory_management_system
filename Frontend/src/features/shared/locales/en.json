@@ -1,5 +1,7 @@
 {
-  "app": { "name": "Inventory System" },
+  "app": {
+    "name": "Inventory System"
+  },
   "nav": {
     "dashboard": "Dashboard",
     "products": "Products",
@@ -8,7 +10,8 @@
     "purchases": "Purchases",
     "purchaseReturns": "Purchase Returns",
     "stock": "Stock",
-    "users": "Users"
+    "users": "Users",
+    "customers": "Customers"
   },
   "header": {
     "toggleSidebar": "Toggle sidebar",
@@ -68,5 +71,57 @@
   "notFound": {
     "title": "Page not found",
     "back": "Back to dashboard"
+  },
+  "customers": {
+    "title": "Customer Management",
+    "subtitle": "Create, view, edit and manage customer records",
+    "name": "Customer name",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "image": "Image URL"
+  },
+  "sales": {
+    "title": "Sales Management",
+    "subtitle": "Create sales invoices and manage recorded sales",
+    "newSale": "New sale",
+    "closeForm": "Close form",
+    "customer": "Customer",
+    "selectCustomer": "Select customer",
+    "warehouse": "Warehouse",
+    "selectWarehouse": "Select warehouse",
+    "soldBy": "Sold by",
+    "selectUser": "Select user",
+    "date": "Sale date",
+    "items": "Sale items",
+    "addItem": "Add item",
+    "product": "Product",
+    "selectProduct": "Select product",
+    "available": "Available stock",
+    "quantity": "Quantity",
+    "unitPrice": "Unit price",
+    "lineTotal": "Line total",
+    "removeItem": "Remove item",
+    "discount": "Discount",
+    "notes": "Notes",
+    "subtotal": "Subtotal",
+    "grandTotal": "Grand total",
+    "saveSale": "Save sale",
+    "history": "Sales history",
+    "invoice": "Invoice",
+    "itemsCount": "Items",
+    "noSales": "No sales found.",
+    "loadError": "Could not load sales data",
+    "requiredSelects": "Select a customer, warehouse and user.",
+    "invalidItems": "Enter a valid product, quantity and price.",
+    "discountError": "Discount cannot exceed the sale total.",
+    "stockError": "Insufficient stock",
+    "created": "Sale created successfully.",
+    "saveError": "Could not save sale.",
+    "deleteConfirm": "Delete invoice {{invoice}}? The sold quantities will be returned to stock.",
+    "deleted": "Sale deleted and stock restored.",
+    "deleteError": "Could not delete sale.",
+    "view": "View",
+    "invoiceDetails": "Invoice details"
   }
 }
