@@ -20,7 +20,7 @@ psql -h localhost -p 5432 -U inventoryUser -d inventoryDB -f Database/migrations
 
 Adjust the host, port, username and database name to match `Backend/.env`.
 
-The migration is designed to be rerunnable. It backfills the ledger from existing purchase, sale, sales-return and purchase-return item rows, then installs triggers so later item inserts, updates and deletes are recorded in the ledger. The existing document services remain responsible for updating the `stocks` table in the same transaction as their document changes.
+The migration is designed to be rerunnable. It backfills the ledger from existing purchase, sale, sales-return and purchase-return item rows, then installs triggers so later item inserts, updates and deletes are recorded in the ledger. The database triggers update `stocks` for purchase and sale item inserts/updates/deletes. The existing return services update stock for purchase returns and sales returns, while the triggers record those return movements in the ledger.
 
 ## Start the application
 
@@ -111,8 +111,8 @@ Transfers and adjustments update `stocks` and `stock_movements` in one PostgreSQ
 
 ## Scope intentionally left unchanged
 
-- Existing purchase and sales pages remain as they were in the uploaded project. In the original project these routes are placeholders, not working document-entry screens. The migration records their existing document rows and will record later purchase/sale item writes made by a document workflow, but this extension does not build new purchase or sales screens.
-- Existing product, login, user, customer, supplier, report and settings modules are not redesigned.
+- The Purchases screen is now implemented in `src/features/purchases`. The Suppliers screen is implemented in `src/features/suppliers`. See `INTEGRATION_AND_PURCHASES_SETUP.md` for setup and API details.
+- Existing product, login, user, customer, report and settings modules are not redesigned.
 - Stock valuation is an estimate using each product's current `purchase_price`; this is not FIFO or weighted-average accounting valuation.
 - Existing purchase-return and sales-return services were not rewritten. Their item-table writes are captured by the migration's database triggers.
 

@@ -11,7 +11,8 @@
     "purchaseReturns": "Purchase Returns",
     "stock": "Stocks",
     "users": "Users",
-    "warehouses": "Warehouses"
+    "warehouses": "Warehouses",
+    "suppliers": "Suppliers"
   },
   "header": {
     "toggleSidebar": "Toggle sidebar",
@@ -118,5 +119,12 @@
   "notFound": {
     "title": "Page not found",
     "back": "Back to dashboard"
+  },
+  "suppliers": {
+    "title": "Suppliers",
+    "name": "Supplier name",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address"
   }
 }
