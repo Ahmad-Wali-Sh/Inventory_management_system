@@ -21,6 +21,8 @@
 // =====================================================================
 import LoginPage from '../auth/LoginPage';
 import ProductsPage from '../products/ProductsPage';
+import CustomersPage from '../customers/CustomersPage';
+import SalesPage from '../sales/SalesPage';
 import PlaceholderPage from '../shared/components/PlaceholderPage';
 import NotFoundPage from './NotFoundPage';
 
@@ -52,8 +54,16 @@ export const routes = [
     sidebar: { icon: 'box' },
   },
   {
+    path: '/customers',
+    element: <CustomersPage />,
+    titleKey: 'nav.customers',
+    layout: true,
+    protected: true,
+    sidebar: { icon: 'users' },
+  },
+  {
     path: '/sales',
-    element: <PlaceholderPage titleKey="nav.sales" />, // TODO(students)
+    element: <SalesPage />,
     titleKey: 'nav.sales',
     layout: true,
     protected: true,
