@@ -6,7 +6,7 @@ import { useAuthStore } from '../stores/authStore';
 
 const axiosClient = axios.create({
   // Comes from the .env file:  VITE_API_URL=http://localhost:5000/api
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
   headers: { 'Content-Type': 'application/json' },
 });
 

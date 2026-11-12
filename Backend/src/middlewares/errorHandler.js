@@ -6,6 +6,7 @@ function notFound(req, res) {
 // Turn PostgreSQL error codes into friendly HTTP errors.
 // Codes: https://www.postgresql.org/docs/current/errcodes-appendix.html
 const pgErrors = {
+  '3D000': [500, 'Database does not exist. Check DB_NAME in Backend/.env and create the database in PostgreSQL'],
   23505: [409, 'A record with this value already exists'], // unique_violation
   23503: [409, 'Related record not found or still in use'], // foreign_key_violation
   23502: [400, 'A required field is missing'], // not_null_violation
